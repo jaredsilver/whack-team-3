@@ -23,7 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: whack-team-3_development
+  username: localwhack
+  password: easilyhackable
+  database: whacklocal
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
