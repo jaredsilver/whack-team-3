@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  goal_type: 
+  quantity: 1
+
+two:
+  user: 
+  goal_type: 
+  quantity: 1
