@@ -1,2 +1,0 @@
-class GoalsController < ApplicationController
-end
