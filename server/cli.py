@@ -20,12 +20,12 @@ def get_db():
 
     try:
         DB_NAME = os.environ['DB_NAME']
-    except Exception, e:
+    except Exception as e:
         DB_NAME = 'test'
 
     try:
         DB_USER = os.environ['DB_USER']
-    except Exception, e:
+    except Exception as e:
         DB_USER = 'dbadmin'
 
     DB_PASSWORD = ''
@@ -48,7 +48,7 @@ def get_db():
     return db
 
 def query_db(query, args=(), one=False):
-    print query
+    print(query)
     cur = get_db().cursor()
 
     try:
@@ -58,10 +58,9 @@ def query_db(query, args=(), one=False):
         # Turn into colname->val dict representation of tuple
         # this isn't very efficient but will suffice for now
         rv = [make_dicts(cur, row) for row in rv]
-    except Exception, e:
-        print e
+    except Exception as e:
+        print(e)
         rv = [{'error': e}]
 
     cur.close()
     return (rv[0] if rv else None) if one else rv
-
