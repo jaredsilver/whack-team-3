@@ -51,11 +51,16 @@
 </div>
 
 <br /><br />
-<h1>Add a Goal</h1>
+<h1>Edit Your Goals</h1>
 
 <form action="" method="POST">
-  <label for="quantity">Quantity: </label><input type="number" name="quantity" id="quantity" />
-  <input type="submit" value="Add Goal" />
+  <label for="sleep">Sleep (hours):</label><input id="sleep" name="sleep" type="number" /><br />
+  <label for="exercise">Exercise (minutes):</label><input id="exercise" name="exercise" type="number" /><br />
+  <label for="water">Water (cups):</label><input id="water" name="water" type="number" /><br />
+  <label for="protein">Protein (servings):</label><input id="protein" name="protein" type="number" /><br />
+  <label for="fruit">Fruit (servings):</label><input id="fruit" name="fruit" type="number" /><br />
+  <label for="veggies">Veggies (servings):</label><input id="veggies" name="veggies" type="number" /><br />
+  <input type="submit" value="Update Goals" />
 </form>
 
 {% endblock %}
