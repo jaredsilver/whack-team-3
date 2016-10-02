@@ -16,18 +16,22 @@ def index():
    	goals = db.select_goals(0)
 
    	return render_template("index.html", goals=goals)
+   	#return render_template("index.html")
 
-@app.route("/signup")
+@app.route("/signup", methods = ['POST', 'GET'])
 def signup():
-    return render_template("signup.html")
+	return render_template("signup.html")
 
-    #results = db.select_one()
 
 @app.route('/result', methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
    	result = request.form
    	return render_template("result.html",result = result)
+
+@app.route("/member")
+def member():
+    return render_template("member.html")
 
 
 

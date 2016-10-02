@@ -17,14 +17,20 @@
   <div class="goal">
     <h1 class="goal-quantity">127<span class="goal-units">miles of running</span></h1>
     <div class="goal-commands">
-      <a class="cta" href="#">Complete</a>
+      <form action="/result" method="POST">
+        <input type="hidden" value='20' name="id" />
+        <input type="hidden" value='0' name="user_id" />
+        <input type="hidden" value='fruit' name="type" />
+        <input type="hidden" value='8' name="unit" />
+        <input class="cta" type="submit" value="Complete" />
+      </form>      
     </div>
   </div>
 
   <div class="goal">
     <h1 class="goal-quantity">46<span class="goal-units">apples consumed</span></h1>
     <div class="goal-commands">
-      <a class="cta" href="#">Complete</a>
+      <a class="cta" href="/complete?">Complete</a>
     </div>
   </div>
 

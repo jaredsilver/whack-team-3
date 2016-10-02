@@ -5,6 +5,7 @@ def get_db():
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = connect_to_db()
+        db.cursor().execute('set search_path to team3_schema, "$user", public;')
     return db
 
 def add_goal(add_type, add_user_id, add_unit, add_max):

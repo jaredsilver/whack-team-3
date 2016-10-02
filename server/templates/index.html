@@ -7,10 +7,16 @@
 <a href="signup">Sign Up</a>
 <p>(Already have an account? Log in below.)</p>
 <br />
-<form>
+<form action="http://localhost:5000/result" method="POST">
   <label for="username">Username:</label><input type="text" name="username" id="username" /><br />
   <label for="password">Password:</label><input type="password" name="password" id="password" /><br />
   <input type="submit" value="Log In" />
 </form>
+
+{%for goal in goals%}
+{{goal}}
+{%endfor%}
 {% endblock %}
+
+
 
