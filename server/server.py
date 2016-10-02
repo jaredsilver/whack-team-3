@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 
 app = Flask(__name__)
@@ -11,6 +11,9 @@ from datetime import timedelta
 
 @app.route("/")
 def index():
+	#using a user_id 0
+   	db.add_goal('sleep', 0, 'hours', 8)
+   	goals = db.select_goals(0)
 
     # results = db.select_one()
     # print(results)
@@ -27,4 +30,7 @@ def member():
     return render_template("member.html")
 
 if __name__ == "__main__":
-    app.run('0.0.0.0')
+	app.debug = True
+	app.run('0.0.0.0')
+
+#
