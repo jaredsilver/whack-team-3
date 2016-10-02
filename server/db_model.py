@@ -22,7 +22,7 @@ def select_one():
     return results
 
 def query_db(query, args=(), one=False):
-    print query
+    print(query)
     cur = get_db().cursor()
 
     try:
@@ -32,8 +32,8 @@ def query_db(query, args=(), one=False):
         # Turn into colname->val dict representation of tuple
         # this isn't very efficient but will suffice for now
         rv = [make_dicts(cur, row) for row in rv]
-    except Exception, e:
-        print e
+    except Exception as e:
+        print(e)
         rv = [{'error': e}]
 
     cur.close()
@@ -43,7 +43,7 @@ def add_goal():
     sql = "insert into goals (type) values ('sleep');"
     results = query_db(sql, db = get_db(), pretty_print=True)
     return results
-    
+
 def select_goals(add_user_id):
     "Selects all the goals of a particular user"
     sql = "SELECT type, user_id, id, unit, max FROM goals WHERE user_id = add_user_id"
@@ -61,7 +61,7 @@ def select_a():
     """
     sql = "SELECT a from foo"
     results = query_db(sql)
-    print results
+    print(results)
     return results
 
 
