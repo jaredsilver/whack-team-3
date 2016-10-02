@@ -21,7 +21,13 @@ def signup():
 def result():
    if request.method == 'POST':
    	result = request.form
-   	return render_template("result.html",result = result)
+   	for key in result:
+   		if key == "username":
+   			username = key
+   		if key == "password":
+   			password = key
+   	#create a user into the database with username and password 
+   	return render_template("member.html",result = result)
 
 @app.route("/member")
 def member():
