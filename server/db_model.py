@@ -13,7 +13,7 @@ def add_goal(add_type, add_user_id, add_unit, add_max):
     return results
     
 def select_goals(add_user_id):
-    sql = "select * from customers where user_id = {user_id}".format(user_id = add_user_id)
+    sql = "select * from goals where user_id = {user_id}".format(user_id = add_user_id)
     results = query_db(sql, db = get_db(), pretty_print=True)
     return results
 

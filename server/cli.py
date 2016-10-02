@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-
 def make_dicts(cursor, row):
     """
         Turn query results into dictionaries keyed by column name
@@ -65,7 +63,7 @@ def query_db(query, args=(), one=False):
 
     cur.close()
     return (rv[0] if rv else None) if one else rv
-=======
+
 from db_util import *
 
 if __name__ == "__main__":
@@ -83,4 +81,4 @@ if __name__ == "__main__":
 
             query_db(line, pretty_print=True)
         line = raw_input("> ")
->>>>>>> Stashed changes
+

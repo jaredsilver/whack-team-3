@@ -13,9 +13,9 @@ from datetime import timedelta
 def index():
 	#using a user_id 0
    	db.add_goal('sleep', 0, 'hours', 8)
-   	results = db.select_goals(0)
-   	return results;
-   	#return render_template("index.html", entries=results)
+   	goals = db.select_goals(0)
+
+   	return render_template("index.html", goals=goals)
 
 @app.route("/signup")
 def signup():
