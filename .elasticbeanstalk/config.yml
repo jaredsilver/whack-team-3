@@ -1,6 +1,6 @@
 branch-defaults:
   design_updates:
-    environment: whack2016Team3-env
+    environment: whack-2016-team-3-dev
 global:
   application_name: whack-2016-team-3
   default_ec2_keyname: null
