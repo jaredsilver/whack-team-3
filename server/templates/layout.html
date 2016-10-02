@@ -41,6 +41,8 @@
       max-width: 800px;
       margin: auto;
       padding: 1em;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
 
     h1 {
@@ -100,7 +102,7 @@
       border-bottom: 3px solid #608F19;
     }
 
-    input[type="text"], input[type="email"], input[type="number"] {
+    input[type="text"], input[type="email"], input[type="number"], input[type="password"] {
       font-family: "Open Sans", sans-serif;
       border-radius: 5px;
       border: 3px solid #E6E6D8;
@@ -110,7 +112,7 @@
       padding: 0.25em;
     }
 
-    input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+    input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus {
       border-color: #41661C;
     }
 
@@ -178,7 +180,7 @@
     }
 
     .goal-commands {
-      margin: 1em 0;
+      margin: 1em 0 0.7em 0;
     }
 
     .goal .cta {
@@ -209,6 +211,12 @@
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#aaaaaa', GradientType=0 );
       border-bottom-color: #888888;
     }
+
+    footer p {
+      margin: 1em auto;
+      text-align: center;
+      color: #A6A698;
+    }
   </style>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,700|Open+Sans:300,400" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
@@ -220,6 +228,8 @@
   <main>
     {% block content %}{% endblock %}
   </main>
-
+  <footer>
+    <p>Built with &hearts; at WHACK Fall 2016</p>
+  </footer>
 </body>
 </html>
