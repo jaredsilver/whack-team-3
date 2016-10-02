@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 
 app = Flask(__name__)
@@ -16,12 +16,15 @@ def index():
     print(results)
     return render_template("index.html")
 
-@app.route("/hello")
+@app.route("/signup")
 def hello():
+    return render_template("signup.html")
 
-    results = db.select_one()
-    return render_template("hello.html")
-
+@app.route("/result", methods=['GET', 'POST'])
+def result():
+	if request.method == 'POST':
+		result = request.form
+		return render_template("result.html", result = result)
 
 
 if __name__ == "__main__":
