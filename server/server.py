@@ -13,7 +13,7 @@ from datetime import timedelta
 def index():
 
     results = db.select_one()
-    print results
+    print(results)
     return render_template("index.html")
 
 @app.route("/hello")
@@ -26,4 +26,3 @@ def hello():
 
 if __name__ == "__main__":
     app.run('0.0.0.0')
-
