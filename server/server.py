@@ -13,14 +13,13 @@ from datetime import timedelta
 def index():
 
     results = db.select_one()
-
+    print results
     return render_template("index.html")
 
 @app.route("/hello")
 def hello():
 
-    #results = db.select_one()
-
+    results = db.select_one()
     return render_template("hello.html")
 
 

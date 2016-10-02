@@ -2,55 +2,24 @@
     Connect to a vertica database and run queries
 """
 from flask import g
-import vertica_python
-
-import re
-import os
-
-try:
-    DB_NAME = os.environ['DB_NAME']
-except Exception, e:
-    DB_NAME = 'test'
-
-try:
-    DB_USER = os.environ['DB_USER']
-except Exception, e:
-    DB_USER = 'dbadmin'
-
-DB_PASSWORD = ''
-# DB_HOST = os.environ['DB_HOST']
-DB_HOST = "http://ec2-52-90-190-153.compute-1.amazonaws.com/"
-
-conn_info = {'host': DB_HOST,
-             'port': 5433,
-             'user': DB_USER,
-             'password': '',
-             'database': DB_NAME,
-             # 10 minutes timeout on queries
-             'read_timeout': 600,
-             # default throw error on invalid UTF-8 results
-             'unicode_error': 'strict',
-             # SSL is disabled by default
-             'ssl': False}
-
-def make_dicts(cursor, row):
-    """
-        Turn query results into dictionaries keyed by column name
-    """
-    colnames = [col[0] for col in cursor.description]
-
-    fmtrow = {}
-    for idx, value in enumerate(row):
-      fmtrow[colnames[idx]] = value
-
-    return fmtrow
+from cli import *
 
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
-        db = g._database = vertica_python.connect(**conn_info)
+        db = g._database = connect_to_db()
+        db.cursor().execute('set search_path to team3_schema, "$user", public;')
+
     return db
 
+def select_one():
+    """
+        Select 1 from database
+    """
+    sql = "SELECT 1"
+    results = query_db(sql, db = get_db(), pretty_print=True)
+    #print "FROM INSIDE SELECT ONE" + results
+    return results
 
 def query_db(query, args=(), one=False):
     print query
@@ -70,14 +39,21 @@ def query_db(query, args=(), one=False):
     cur.close()
     return (rv[0] if rv else None) if one else rv
 
-def select_one():
-    """
-        Select 1 from database
-    """
-    sql = "SELECT 1"
-    results = query_db(sql)
-    print results
+def add_goal():
+    sql = "insert into goals (type) values ('sleep');"
+    results = query_db(sql, db = get_db(), pretty_print=True)
     return results
+    
+def select_goals(add_user_id):
+    "Selects all the goals of a particular user"
+    sql = "SELECT type, user_id, id, unit, max FROM goals WHERE user_id = add_user_id"
+    results = query_db(sql, db = get_db(), pretty_print=True)
+    #print results
+    return results
+
+def remove_goal(remove_goal_id):
+    "removes the goal with the given ID from the database"
+    sql = "DELETE FROM goals WHERE id = remove_goal_id"
 
 def select_a():
     """
