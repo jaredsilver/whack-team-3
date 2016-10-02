@@ -1,1 +1,205 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    body {
+      background: #F2F2E4;
+      font-size: 20px;;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      color: #333333;
+    }
+
+    header {
+      color: #ffffff;
+      background: #86b53f;
+      background: -moz-linear-gradient(top, #86b53f 0%, #6d9c26 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, #86b53f), color-stop(100%, #6d9c26));
+      background: -webkit-linear-gradient(top, #86b53f 0%, #6d9c26 100%);
+      background: -o-linear-gradient(top, #86b53f 0%, #6d9c26 100%);
+      background: -ms-linear-gradient(top, #86b53f 0%, #6d9c26 100%);
+      background: linear-gradient(to bottom, #86b53f 0%, #6d9c26 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86b53f', endColorstr='#6d9c26', GradientType=0 );
+      border-bottom: 4px solid #53820C;
+    }
+
+    header h1 {
+      color: #ffffff;
+      font-weight: 300;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+      font-size: 3em;
+      padding: 0.25em 0;
+    }
+
+    main {
+      background: #FFFFF1;
+      max-width: 800px;
+      margin: auto;
+      padding: 1em;
+    }
+
+    h1 {
+      font-family: 'Roboto Slab', serif;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 1em auto;
+      line-height: 1.5;
+    }
+
+    main h1 {
+      color: #41661C;
+    }
+
+    input {
+      margin: 0.25em auto;
+    }
+
+    input[type="submit"] {
+      border: none;
+      outline: none;
+      color: #ffffff;
+      background: #86b53f;
+      background: -moz-linear-gradient(top, #86b53f 0%, #6d9c26 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, #86b53f), color-stop(100%, #6d9c26));
+      background: -webkit-linear-gradient(top, #86b53f 0%, #6d9c26 100%);
+      background: -o-linear-gradient(top, #86b53f 0%, #6d9c26 100%);
+      background: -ms-linear-gradient(top, #86b53f 0%, #6d9c26 100%);
+      background: linear-gradient(to bottom, #86b53f 0%, #6d9c26 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86b53f', endColorstr='#6d9c26', GradientType=0 );
+      border-bottom: 3px solid #53820C;
+      border-radius: 5px;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1em;
+      padding: 0.5em 1em;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: #93C24C;
+      background: -moz-linear-gradient(top, #93C24C 0%, #7AA933 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, #93C24C), color-stop(100%, #7AA933));
+      background: -webkit-linear-gradient(top, #93C24C 0%, #7AA933 100%);
+      background: -o-linear-gradient(top, #93C24C 0%, #7AA933 100%);
+      background: -ms-linear-gradient(top, #93C24C 0%, #7AA933 100%);
+      background: linear-gradient(to bottom, #93C24C 0%, #7AA933 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93C24C', endColorstr='#7AA933', GradientType=0 );
+      border-bottom: 3px solid #608F19;
+    }
+
+    input[type="text"], input[type="email"] {
+      font-family: "Open Sans", sans-serif;
+      border-radius: 5px;
+      border: 3px solid #E6E6D8;
+      transition: all 0.3s ease;
+      font-size: 1em;
+      outline: none;
+      padding: 0.25em;
+    }
+
+    input[type="text"]:focus, input[type="email"]:focus {
+      border-color: #41661C;
+    }
+
+    label {
+      margin-right: 0.5em;
+    }
+
+    .goal {
+      background: #F2F2E4;
+      background: -moz-linear-gradient(top, #F2F2E4 0%, #E6E6D8 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, #F2F2E4), color-stop(100%, #E6E6D8));
+      background: -webkit-linear-gradient(top, #F2F2E4 0%, #E6E6D8 100%);
+      background: -o-linear-gradient(top, #F2F2E4 0%, #E6E6D8 100%);
+      background: -ms-linear-gradient(top, #F2F2E4 0%, #E6E6D8 100%);
+      background: linear-gradient(to bottom, #F2F2E4 0%, #E6E6D8 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F2F2E4', endColorstr='#E6E6D8', GradientType=0 );
+      border-radius: 5px;
+      margin: 0.5em 0;
+      max-width: 600px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+      padding: 0.5em;
+    }
+
+    .goal-quantity {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.075);
+      border-radius: 5px;
+      padding: 0.125em 0.25em;
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+    }
+
+    .goal-name {
+      display: inline-block;
+      font-weight: 300;
+    }
+
+    .goal-remove {
+      display: inline-block;
+      float: right;
+    }
+
+    .goal-edit {
+      display: inline-block;
+      float: right;
+    }
+  </style>
+  <script>
+    function removeGoal() {
+
+    }
+
+    function editGoal() {
+
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,700|Open+Sans:300,400" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1 id="logo">Website Name</h1>
+  </header>
+  <main>
+    <h1>Page Header</h1>
+    <p>This is some example text that has something to do with our website. It's an example of some stuff that might explain what this site is all about.</p>
+    <p>This is a slightly shorter paragraph also explaining some stuff.</p>
+    <form>
+      <label for="">Label</label><input type="text" /><br />
+      <label for="">Label</label><input type="text" /><br />
+      <input type="submit" value="Test Button" />
+    </form>
+    <div id="goals">
+      <div class="goal">
+        <h2 class="goal-units"><span class="goal-quantity">3</span> units of goal</h2>
+        <p class="goal-name"></p>
+        <span class="goal-remove"><i class="fa fa-trash" aria-hidden="true"></i></span>
+        <span class="goal-edit"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="goal">
+        <h2 class="goal-units"><span class="goal-quantity">127</span> units of goal</h2>
+        <p class="goal-name"></p>
+        <span class="goal-remove"><i class="fa fa-trash" aria-hidden="true"></i></span>
+        <span class="goal-edit"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="goal">
+        <h2 class="goal-units"><span class="goal-quantity">46</span> units of goal</h2>
+        <p class="goal-name"></p>
+        <span class="goal-remove"><i class="fa fa-trash" aria-hidden="true"></i></span>
+        <span class="goal-edit"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
