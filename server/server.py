@@ -12,17 +12,19 @@ from datetime import timedelta
 @app.route("/")
 def index():
 
-    results = db.select_one()
-    print(results)
+    # results = db.select_one()
+    # print(results)
     return render_template("index.html")
 
-@app.route("/hello")
-def hello():
+@app.route("/signup")
+def signup():
 
-    results = db.select_one()
-    return render_template("hello.html")
+    return render_template("signup.html")
 
+@app.route("/member")
+def member():
 
+    return render_template("member.html")
 
 if __name__ == "__main__":
     app.run('0.0.0.0')
