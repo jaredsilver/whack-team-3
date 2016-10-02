@@ -11,17 +11,11 @@ from datetime import timedelta
 
 @app.route("/")
 def index():
-	#using a user_id 0
-   	db.add_goal('sleep', 0, 'hours', 8)
-   	goals = db.select_goals(0)
-
-   	return render_template("index.html", goals=goals)
-   	#return render_template("index.html")
+    return render_template("index.html")
 
 @app.route("/signup", methods = ['POST', 'GET'])
 def signup():
 	return render_template("signup.html")
-
 
 @app.route('/result', methods = ['POST', 'GET'])
 def result():
@@ -33,10 +27,6 @@ def result():
 def member():
     return render_template("member.html")
 
-
-
 if __name__ == "__main__":
 	app.debug = True
 	app.run('0.0.0.0')
-
-#
